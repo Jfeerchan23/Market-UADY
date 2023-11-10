@@ -24,20 +24,6 @@
     </header>
 </div>
 
-<script>
-    document.getElementById('cerrarSesion').addEventListener('click', function (e) {
-  e.preventDefault(); // Evita que el enlace realice una redirección predeterminada
-
-  // Elimina los elementos de sessionStorage
-  sessionStorage.removeItem('matricula');
-  sessionStorage.removeItem('idUsuario');
-  sessionStorage.removeItem('token');
-
-  // Redirige al usuario a la página de inicio de sesión
-  window.location.href = 'ruta-de-tu-pagina-de-inicio-de-sesion.html';
-});
-
-</script>
 
 
 

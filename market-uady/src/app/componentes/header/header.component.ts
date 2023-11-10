@@ -33,7 +33,10 @@ export class HeaderComponent {
   redirectToLogout() {
     // Realiza aquí las acciones necesarias antes de cerrar la sesión
     // Luego redirige a la página de inicio de sesión
+    this.funcionParaRemoverDatos();
     this.router.navigate(['/login']); // Ajusta la ruta según tu página de inicio de sesión
+
+
   }
 
 
@@ -78,6 +81,22 @@ export class HeaderComponent {
 
   
 
+  funcionParaRemoverDatos() {
+    const cerrarSesionButton = document.getElementById('cerrarSesion');
+    if (cerrarSesionButton) { // Verifica que el botón exista
+      cerrarSesionButton.addEventListener('click', function (e) {
+        e.preventDefault(); // Evita que el enlace realice una redirección predeterminada
+  
+        // Elimina los elementos de sessionStorage
+        sessionStorage.removeItem('matricula');
+        sessionStorage.removeItem('idUsuario');
+        sessionStorage.removeItem('token');
+  
+        // Redirige al usuario a la página de inicio de sesión
+        window.location.href = 'ruta-de-tu-pagina-de-inicio-de-sesion.html';
+      });
+    }
+  }
   
 
 
